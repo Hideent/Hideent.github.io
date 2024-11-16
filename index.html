@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Arcana 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="niebla" style="display: none;"></div>
+    <div class="video-container">
+        <video autoplay muted loop id="background-video"> 
+            <source src="Trailer1optm.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <img src="Lechuza3.png" alt="Lechuza" class="lechuza">
+        </div>
+    </div>
+
+    <div class="title-container">
+        <h1>Tienes correspondencia</h1>
+    </div>
+
+    <div class="lorem-container">
+        <p class="lorem-text">
+            Bienvenido joven aprendiz. <br>
+            <br>
+            Nos complace anunciarte que has sido invitado a unirte a nuestro segundo semestre en la prestigiosa Academia Arcana.<br>
+            <br>
+            ¡Recibe tu invitación con orgullo y prepárate para explorar los misterios mágicos que abarca Academia!<br>
+        </p>
+
+        <a href="carta.html" class="action-button" id="actionButton">Recibir Carta</a>
+
+    </div>
+
+    <div class="image-container">
+        <img src="TKStudios.png" alt="TK Studios">
+        <img src="MSRP.png" alt="MSRP">
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var video = document.getElementById("background-video");
+            video.playbackRate = 3;  // Cambia 1.5 por la velocidad deseada
+        });
+    </script>
+</body>
+</html>

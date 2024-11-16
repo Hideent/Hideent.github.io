@@ -1,0 +1,277 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vw;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+@font-face {
+    font-family: 'Harry P';
+    src: url('HARRYP_.TTF') format('truetype'); /* Asegúrate de que la ruta sea correcta */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Para que quede detrás de otros elementos */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad y color del overlay */
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #ffffff;
+}
+
+.lechuza {
+    position: relative; /* Cambiado a relative para que se mueva respecto a su contenedor */
+    right: -28%; /* Esto asegura que se mueva a la derecha */
+    bottom: 0;
+    top: 60px;
+    width: 710px;
+    height: auto;
+    transform: rotate(1.35deg);
+    z-index: 3;
+    max-width: 100%;
+}
+
+@media (max-width: 1629px) {
+    .lechuza{
+        display: none;
+    }
+}
+
+@media (max-width: 1400px) {
+    h1{
+        position: relative;
+        left: -50px;
+    }
+
+    .lorem-container{
+        left: -500px;
+    }
+}
+
+@media (max-width: 1290px) {
+    h1{
+        position: relative;
+        left: -50px;
+        font-size: 5px;
+    }
+}
+
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 20px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.lorem-container {
+    position: absolute;
+    top: calc(100px + 200px + 20px); /* Justo debajo del título */
+    left: 209px;  /* Alineado con el título */
+    max-width: 900px; /* Ancho máximo de 900px */
+    color: #ffffff;
+    font-size: 20px;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.lorem-text {
+    max-width: 100%; /* Opcional, ajusta el ancho del texto */
+}
+
+/* Estilos para el título */
+.title-container {
+    position: absolute;
+    top: 100px;   /* Separación de 209px desde la parte superior */
+    left: 209px;  /* Separación de 209px desde la izquierda */
+    z-index: 4;   /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.title-container h1 {
+    font-family: 'Harry P', sans-serif; /* Usa la fuente Harry P */
+    font-size: 170px;   /* Ajusta el tamaño de la fuente a tu gusto */
+    color: #F9C440;      /* Cambia el color a blanco */
+    margin: 0;         /* Elimina el margen por defecto */
+    letter-spacing: 0px;
+}
+
+.action-button {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;  /* Espacio entre el texto y el botón */
+    padding: 12px 24px; /* Tamaño del botón ajustado */
+    font-family: 'Arial', sans-serif;  /* Usar Arial para el texto */
+    font-size: 20px;  /* Tamaño de la fuente */
+    color: #fff;  /* Color del texto */
+    background-color: #e6b63d;  /* Color de fondo */
+    border: none;  /* Sin borde */
+    border-radius: 5px;  /* Bordes redondeados */
+    cursor: pointer;  /* Cambia el cursor cuando se pasa sobre el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;  /* Transición suave para color, tamaño y sombra */
+    z-index: 8;  /* Asegurarnos de que el botón esté por encima de otros elementos */
+}
+
+
+.action-button:hover {
+    background-color: #e6b32b;  /* Cambio de color al pasar el mouse */
+    transform: scale(1.05);  /* Aumenta ligeramente el tamaño del botón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Agrega una sombra suave */
+}
+
+/* Efecto de enfoque (focus) para una mejor accesibilidad */
+.action-button:focus {
+    outline: none;  /* Elimina el borde predeterminado */
+    box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.8); /* Resalta con un borde naranja cuando se enfoca */
+}
+
+/* Contenedor de las imágenes */
+.image-container {
+    position: absolute;
+    bottom: 20px;  /* Espacio desde la parte inferior de la pantalla */
+    left: 20px;    /* Espacio desde la izquierda de la pantalla */
+    display: flex;  /* Usamos flexbox para poner las imágenes una al lado de la otra */
+    gap: 10px;     /* Espacio entre las imágenes */
+    z-index: 10;   /* Aseguramos que estén encima de otros elementos */
+}
+
+/* Estilos para las imágenes */
+.image-container img {
+    width: 80px;  /* Ajusta el tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+
+.content-to-scroll {
+    /* Aplica esta clase al contenedor que quieres desplazar */
+    position: relative;
+    height: calc(100vh - height-of-your-footer); /* Ajusta la altura según tu diseño */
+    overflow: hidden;
+  }
+  
+.niebla{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    animation: fadeOut 2s ease-in-out forwards;
+    animation-play-state: paused;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, animation 2s ease-in-out;
+}
+
+@keyframes fadeOut{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-container h1 {
+        font-size: 80px;
+    }
+
+    .lorem-container {
+        font-size: 16px;
+        left: 10px;
+    }
+
+    .action-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .lechuza {
+        display: none;
+    }
+
+    #background-video{
+        position: fixed;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    
+    .title-container h1 {
+        position: relative;
+        left: -150px;
+        font-size: 400%;
+        right: 55px;
+    }
+
+    .lorem-container {
+        position: absolute;
+        font-size: 14px;
+        left: 55px;
+        top: 240px;
+        right: 55px;
+    }
+
+    .action-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .lechuza {
+        display: none;
+    }
+
+    .image-container img {
+        width: 40px;
+    }
+
+    #background-video{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .image-container{
+        left: 45px;
+    }
+}
